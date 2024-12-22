@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://258eangfmd72"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_61jby"]
+[ext_resource type="PackedScene" uid="uid://bc6m2epoj41e3" path="res://assets/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="1_ynikj"]
+[ext_resource type="Script" path="res://scenes/player/interactable_object_holder.gd" id="3_ewi8r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6cbfw"]
+radius = 0.30887
+height = 0.730117
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53t8i"]
+size = Vector3(0.4, 0.8, 0.4)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_61jby")
+
+[node name="Character" parent="." instance=ExtResource("1_ynikj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318119, 0)
+shape = SubResource("CapsuleShape3D_6cbfw")
+
+[node name="AreaToInteract" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.336964, 0.604302)
+script = ExtResource("3_ewi8r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaToInteract"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.042479)
+shape = SubResource("BoxShape3D_53t8i")
+
+[node name="SpawnPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275381, 0.36023)
+
+[connection signal="area_entered" from="AreaToInteract" to="AreaToInteract" method="_interactable_object_on_area_entered"]
+[connection signal="area_exited" from="AreaToInteract" to="AreaToInteract" method="_interactable_object_on_area_exited"]

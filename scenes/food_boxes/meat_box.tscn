@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://jq0nlxxni664"]
+
+[ext_resource type="Script" path="res://scripts/food_boxes/food_box.gd" id="1_yvhag"]
+[ext_resource type="PackedScene" uid="uid://ryihn33gffeu" path="res://scenes/components/highlight_interactable_object/highlight_interactable_object.tscn" id="2_5islm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pwpo2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfj8n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xhvu"]
+
+[node name="MeatBox" type="Node3D"]
+script = ExtResource("1_yvhag")
+ingredient_type = "meat"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pwpo2")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_lfj8n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_2xhvu")
+
+[node name="HighlightInteractableObject" parent="." instance=ExtResource("2_5islm")]
+
+[connection signal="area_entered" from="Area3D" to="HighlightInteractableObject" method="_on_area_entered"]
+[connection signal="area_exited" from="Area3D" to="HighlightInteractableObject" method="_on_area_exited"]

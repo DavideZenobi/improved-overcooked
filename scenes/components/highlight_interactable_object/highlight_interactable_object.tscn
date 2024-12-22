@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ryihn33gffeu"]
+
+[ext_resource type="Script" path="res://scenes/components/highlight_interactable_object/highlight_interactable_object.gd" id="1_o7cbb"]
+
+[node name="HighlightInteractableObject" type="Node"]
+script = ExtResource("1_o7cbb")

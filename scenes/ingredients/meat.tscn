@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbmwbbjallfo8"]
+
+[ext_resource type="PackedScene" uid="uid://cqyf1htivfq8o" path="res://assets/kenney_food-kit/Models/GLB format/meat-raw.glb" id="1_ygmco"]
+
+[node name="Meat" type="Node3D"]
+
+[node name="meat-raw2" parent="." instance=ExtResource("1_ygmco")]
