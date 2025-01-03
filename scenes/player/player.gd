@@ -2,14 +2,13 @@ extends CharacterBody3D
 
 @export var speed = 3
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-#@onready var spawn_position: Vector3 = $SpawnPosition.global_transform.origin
 
 func _process(delta):
 	if Input.is_action_just_pressed("take_or_drop"):
 		if $AreaToInteract.interactable_object:
 			var ingredient_type = $AreaToInteract.interactable_object.get_ingredient_type()
-			var spawn_position: Vector3 = $SpawnPosition.global_transform.origin
-			SceneManager.spawn_ingredient(ingredient_type, spawn_position)
+			var holding_point: Vector3 = $HoldingPoint.global_transform.origin
+			SceneManager.spawn_ingredient(ingredient_type, holding_point)
 
 func _physics_process(delta):
 	var direction = Vector3(0, 0, 0)

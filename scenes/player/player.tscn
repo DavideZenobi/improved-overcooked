@@ -28,7 +28,7 @@ script = ExtResource("3_ewi8r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.042479)
 shape = SubResource("BoxShape3D_53t8i")
 
-[node name="SpawnPosition" type="Node3D" parent="."]
+[node name="HoldingPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275381, 0.36023)
 
 [connection signal="area_entered" from="AreaToInteract" to="AreaToInteract" method="_interactable_object_on_area_entered"]

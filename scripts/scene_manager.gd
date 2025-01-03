@@ -7,6 +7,8 @@ var ingredient_scenes: Dictionary = {
 	##"tomato": preload("res://scenes/Tomato.tscn")
 }
 
+var current_level: Node
+
 func spawn_ingredient(ingredient_type: String, spawn_position: Vector3) -> void:
 	# Verifica si existe la escena asociada al tipo
 	if not ingredient_scenes.has(ingredient_type):
@@ -16,9 +18,12 @@ func spawn_ingredient(ingredient_type: String, spawn_position: Vector3) -> void:
 	# Instancia la escena correspondiente
 	var ingredient_scene = ingredient_scenes[ingredient_type]
 	var ingredient_instance = ingredient_scene.instantiate()
-
+	
+	var player = get_tree().get_root().get_node("Level1/Player")
+	print(player)
+	#player.add_child(ingredient_instance)
 	# Agrega la instancia al árbol
-	add_child(ingredient_instance)
+	#add_child(ingredient_instance)
 	
 	# Posiciona la instancia en el mundo
 	ingredient_instance.global_transform.origin = spawn_position
