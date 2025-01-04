@@ -8,7 +8,8 @@ func _process(delta):
 		if $AreaToInteract.interactable_object:
 			var ingredient_type = $AreaToInteract.interactable_object.get_ingredient_type()
 			var holding_point: Vector3 = $HoldingPoint.global_transform.origin
-			SceneManager.spawn_ingredient(ingredient_type, holding_point)
+			## SceneManager.spawn_ingredient(ingredient_type, holding_point)
+			SceneManagerV2.instantiate_scene(ingredient_type, holding_point, self)
 
 func _physics_process(delta):
 	var direction = Vector3(0, 0, 0)
@@ -25,9 +26,6 @@ func _physics_process(delta):
 		direction = direction.normalized()
 	
 	handle_movement(direction, delta)
-	
-	if Input.is_action_just_pressed("take_or_drop"):
-		handle_take_or_drop()
 
 func handle_movement(direction: Vector3, delta: float):
 	## Check if character is falling and add gravity/velocity
