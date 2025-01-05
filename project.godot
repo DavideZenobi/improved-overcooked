@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SceneManager="*res://scripts/scene_manager.gd"
 SceneManagerV2="*res://scripts/scene_manager_v_2.gd"
 
+[dotnet]
+
+project/assembly_name="ImprovedOvercooked"
+
 [input]
 
 move_left={
