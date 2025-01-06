@@ -26,6 +26,9 @@ shape = SubResource("BoxShape3D_lfj8n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_2xhvu")
 
+[node name="SupportPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 0)
+
 [node name="HighlightInteractableObject" parent="." instance=ExtResource("2_5islm")]
 
 [connection signal="area_entered" from="Area3D" to="HighlightInteractableObject" method="_on_area_entered"]

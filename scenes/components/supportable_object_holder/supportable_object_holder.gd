@@ -1,6 +1,6 @@
 extends Node
 
-## Este script habilita la mecanica de apoyar objetos.
+## Este script habilita la mecánica de apoyar objetos.
 ##
 ## IMPORTANTE
 ## Es requisito que la escena donde se aplique este componente,
@@ -21,4 +21,3 @@ func unsupport():
 	
 	current_supportable_object = null;
 	return;
-	

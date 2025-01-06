@@ -30,6 +30,9 @@ func instantiate_scene(scene_name: String, position: Vector3, parent_node: Node 
 	
 	print("Official position: ", parent_node.get_node("HoldingPoint").global_transform.origin);
 
+func move_scene(scene_name: Node, position: Vector3, parent_node: Node = null) -> void:
+	return;
+
 func delete_scene(scene: Node):
 	
 	return;
