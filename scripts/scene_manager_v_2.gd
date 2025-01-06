@@ -30,8 +30,12 @@ func instantiate_scene(scene_name: String, position: Vector3, parent_node: Node 
 	
 	print("Official position: ", parent_node.get_node("HoldingPoint").global_transform.origin);
 
-func move_scene(scene_name: Node, position: Vector3, parent_node: Node = null) -> void:
-	return;
+func reparent_scene(scene_to_reparent: Node, new_position: Vector3, new_parent: Node = null) -> Node:
+	var old_parent = scene_to_reparent.get_parent();
+	old_parent.remove_child(scene_to_reparent);
+	new_parent.add_child(scene_to_reparent);
+	scene_to_reparent.global_transform.origin = new_position;
+	return scene_to_reparent;
 
 func delete_scene(scene: Node):
 	
