@@ -8,6 +8,7 @@ func _process(delta):
 		if $CarryingObject.current_carrying_object:
 			if $AreaToInteract.closest_interactable_object:
 				## Can try to support the object on the table/furniture/etc if its possible
+				handle_drop();
 				pass;
 			else:
 				## Nothing happens. Could try to drop the object on the floor in the future
@@ -15,6 +16,7 @@ func _process(delta):
 		else:
 			if $AreaToInteract.closest_interactable_object:
 				## Interact with the object
+				handle_take();
 				pass;
 			pass;
 		
@@ -57,5 +59,10 @@ func handle_movement(direction: Vector3, delta: float):
 	
 	move_and_slide()
 
-func handle_take_or_drop():
-	pass
+func handle_take():
+	## Primero se controla si tiene algun objeto apoyado ya que tiene prioridad.
+	## Segundo
+	pass;
+
+func handle_drop():
+	pass;
