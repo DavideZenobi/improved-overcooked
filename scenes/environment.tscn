@@ -20,3 +20,6 @@ mesh = SubResource("BoxMesh_h3c13")
 
 [node name="MeatBox" parent="." instance=ExtResource("1_cxgwg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02341, -2.81286)
+
+[node name="MeatBox2" parent="." instance=ExtResource("1_cxgwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07377, 1, -2.88341)

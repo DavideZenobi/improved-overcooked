@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://258eangfmd72"]
+[gd_scene load_steps=7 format=3 uid="uid://258eangfmd72"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_61jby"]
 [ext_resource type="PackedScene" uid="uid://bc6m2epoj41e3" path="res://assets/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="1_ynikj"]
 [ext_resource type="Script" path="res://scenes/player/interactable_object_holder.gd" id="3_ewi8r"]
+[ext_resource type="PackedScene" uid="uid://c7qpvjkkpwkbr" path="res://scenes/components/carrying_object/carrying_object.tscn" id="4_eltat"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6cbfw"]
 radius = 0.30887
@@ -30,6 +31,8 @@ shape = SubResource("BoxShape3D_53t8i")
 
 [node name="HoldingPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275381, 0.36023)
+
+[node name="CarryingObject" parent="." instance=ExtResource("4_eltat")]
 
 [connection signal="area_entered" from="AreaToInteract" to="AreaToInteract" method="_interactable_object_on_area_entered"]
 [connection signal="area_exited" from="AreaToInteract" to="AreaToInteract" method="_interactable_object_on_area_exited"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7qpvjkkpwkbr"]
+
+[ext_resource type="Script" path="res://scenes/components/carrying_object/carrying_object.gd" id="1_bmmuq"]
+
+[node name="CarryingObject" type="Node"]
+script = ExtResource("1_bmmuq")

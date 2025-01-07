@@ -5,6 +5,19 @@ extends CharacterBody3D
 
 func _process(delta):
 	if Input.is_action_just_pressed("take_or_drop"):
+		if $CarryingObject.current_carrying_object:
+			if $AreaToInteract.closest_interactable_object:
+				## Can try to support the object on the table/furniture/etc if its possible
+				pass;
+			else:
+				## Nothing happens. Could try to drop the object on the floor in the future
+				pass;
+		else:
+			if $AreaToInteract.closest_interactable_object:
+				## Interact with the object
+				pass;
+			pass;
+		
 		if $AreaToInteract.interactable_object:
 			var ingredient_type = $AreaToInteract.interactable_object.get_ingredient_type()
 			var holding_point: Vector3 = $HoldingPoint.global_transform.origin
