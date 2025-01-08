@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3tud85g5dq7j"]
+
+[ext_resource type="Script" path="res://scenes/components/priority_interaction/priority_interaction.gd" id="1_pgdet"]
+
+[node name="PriorityInteraction" type="Node"]
+script = ExtResource("1_pgdet")

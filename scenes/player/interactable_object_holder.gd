@@ -14,9 +14,15 @@ func _interactable_object_on_area_exited(area: Area3D):
 		update_closest_interactable_object();
 
 func update_closest_interactable_object():
+	## Si no hay objetos en la array, no hay objeto más cercano.
 	if interactable_objects.is_empty():
 		closest_interactable_object = null;
 		print("No interactable object near");
+		return;
+	
+	## Si solo hay un objeto, ese será el único con el que interactuar.
+	if interactable_objects.size() == 1:
+		closest_interactable_object = interactable_objects[0];
 		return;
 	
 	var player_position = get_parent().global_transform.origin;
