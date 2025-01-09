@@ -3,7 +3,8 @@ extends Node
 var current_level;
 
 var ingredient_scenes: Dictionary = {
-	"meat": preload("res://scenes/ingredients/meat.tscn"),
+	"meat_raw": preload("res://scenes/ingredients/meat_raw.tscn"),
+	"fish": preload("res://scenes/ingredients/fish.tscn"),
 }
 
 ## Change scene (start menu, level 2, etc)

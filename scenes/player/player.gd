@@ -14,13 +14,18 @@ func _process(delta):
 				pass;
 		else:
 			if $InteractableArea.current_interactable_object:
-				## Interact with the object
-				handle_take();
+				if (
+					$InteractableArea.current_interactable_object is IngredientBox or
+					$InteractableArea.current_interactable_object is Ingredient
+				):
+					print($InteractableArea.current_interactable_object is IngredientBox);
+					print($InteractableArea.current_interactable_object is Ingredient);
+					handle_take();
 				pass;
 			pass;
 		
 		if $InteractableArea.current_interactable_object:
-			var ingredient_type = $InteractableArea.current_interactable_object.get_ingredient_type()
+			var ingredient_type = $InteractableArea.current_interactable_object.get_ingredient_box_type()
 			var holding_point: Vector3 = $HoldingPoint.global_transform.origin
 			## SceneManager.spawn_ingredient(ingredient_type, holding_point)
 			SceneManagerV2.instantiate_scene(ingredient_type, holding_point, self)

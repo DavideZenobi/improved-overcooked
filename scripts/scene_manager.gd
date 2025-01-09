@@ -2,8 +2,8 @@ extends Node
 
 # Diccionario para mapear tipos de ingredientes a sus escenas
 var ingredient_scenes: Dictionary = {
-	"meat": preload("res://scenes/ingredients/meat.tscn"),
-	##"fish": preload("res://scenes/Fish.tscn"),
+	"meat_raw": preload("res://scenes/ingredients/meat_raw.tscn"),
+	"fish": preload("res://scenes/ingredients/fish.tscn"),
 	##"tomato": preload("res://scenes/Tomato.tscn")
 }
 

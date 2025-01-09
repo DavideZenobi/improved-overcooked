@@ -21,11 +21,11 @@ script = ExtResource("1_61jby")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318119, 0)
 shape = SubResource("CapsuleShape3D_6cbfw")
 
-[node name="AreaToInteract" type="Area3D" parent="."]
+[node name="InteractableArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.336964, 0.604302)
 script = ExtResource("3_ewi8r")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaToInteract"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.042479)
 shape = SubResource("BoxShape3D_53t8i")
 
@@ -34,5 +34,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275381, 0.36023)
 
 [node name="CarryingObject" parent="." instance=ExtResource("4_eltat")]
 
-[connection signal="area_entered" from="AreaToInteract" to="AreaToInteract" method="_interactable_object_on_area_entered"]
-[connection signal="area_exited" from="AreaToInteract" to="AreaToInteract" method="_interactable_object_on_area_exited"]
+[connection signal="area_entered" from="InteractableArea" to="InteractableArea" method="_interactable_object_on_area_entered"]
+[connection signal="area_exited" from="InteractableArea" to="InteractableArea" method="_interactable_object_on_area_exited"]
