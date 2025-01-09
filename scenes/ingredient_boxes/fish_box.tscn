@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvumvdp0257ii"]
+
+[ext_resource type="PackedScene" uid="uid://dwsgrq1c03q5r" path="res://scenes/ingredient_boxes/ingredient_box.tscn" id="1_gx3jl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fnpmv"]
+
+[node name="FishBox" instance=ExtResource("1_gx3jl")]
+ingredient_type = "fish"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5"]
+mesh = SubResource("BoxMesh_fnpmv")

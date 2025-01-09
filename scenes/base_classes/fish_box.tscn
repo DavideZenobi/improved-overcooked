@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://crx11rryqu2se"]
-
-[ext_resource type="PackedScene" uid="uid://dsyuaevs2103o" path="res://scenes/base_classes/ingredient_box.tscn" id="1_5mmnf"]
-
-[node name="IngredientBox" instance=ExtResource("1_5mmnf")]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://1c7ggs2uak4s"]
+[gd_scene load_steps=5 format=3 uid="uid://1c7ggs2uak4s"]
 
-[ext_resource type="PackedScene" uid="uid://jq0nlxxni664" path="res://scenes/food_boxes/meat_box.tscn" id="1_cxgwg"]
+[ext_resource type="PackedScene" uid="uid://co0jjvf851eqf" path="res://scenes/ingredient_boxes/meat_box.tscn" id="1_mbh72"]
+[ext_resource type="PackedScene" uid="uid://dvumvdp0257ii" path="res://scenes/ingredient_boxes/fish_box.tscn" id="2_7iptg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88i7j"]
 size = Vector3(10, 1, 10)
@@ -18,8 +19,11 @@ shape = SubResource("BoxShape3D_88i7j")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_h3c13")
 
-[node name="MeatBox" parent="." instance=ExtResource("1_cxgwg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02341, -2.81286)
+[node name="MeatBox" parent="." instance=ExtResource("1_mbh72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23979, 1.28205, -3.08796)
 
-[node name="MeatBox2" parent="." instance=ExtResource("1_cxgwg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07377, 1, -2.88341)
+[node name="FishBox" parent="." instance=ExtResource("2_7iptg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17129, 1.15203, -3.27762)
+
+[node name="FishBox2" parent="." instance=ExtResource("2_7iptg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09431, 1.06796, -3.08539)

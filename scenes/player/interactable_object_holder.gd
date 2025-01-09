@@ -2,38 +2,49 @@ extends Node
 
 var interactable_objects: Array = [];
 
-var closest_interactable_object: Node = null
+var current_interactable_object: Node = null
 
 func _interactable_object_on_area_entered(area: Area3D):
 	interactable_objects.append(area.get_parent());
-	update_closest_interactable_object();
+	update_current_interactable_object();
 
 func _interactable_object_on_area_exited(area: Area3D):
 	if not interactable_objects.is_empty():
 		interactable_objects.erase(area.get_parent());
-		update_closest_interactable_object();
+		update_current_interactable_object();
 
-func update_closest_interactable_object():
+func update_current_interactable_object():
 	## Si no hay objetos en la array, no hay objeto más cercano.
 	if interactable_objects.is_empty():
-		closest_interactable_object = null;
+		current_interactable_object = null;
 		print("No interactable object near");
 		return;
 	
 	## Si solo hay un objeto, ese será el único con el que interactuar.
 	if interactable_objects.size() == 1:
-		closest_interactable_object = interactable_objects[0];
+		current_interactable_object = interactable_objects[0];
 		return;
 	
 	var player_position = get_parent().global_transform.origin;
+	var highest_priority = -1;
 	var min_distance = INF;
-	var closest_object = null;
+	var tmp_interactable_object = null;
 	
 	for obj in interactable_objects:
-		var distance = player_position.distance_to(obj.global_transform.origin);
-		if distance < min_distance:
-			min_distance = distance;
-			closest_object = obj;
+		var object_priority = obj.get_node("PriorityInteraction").get_priority();
+		print(object_priority);
+		
+		if object_priority > highest_priority:
+			## Si el objeto tiene mas prioridad, es seleccionado
+			highest_priority = object_priority;
+			tmp_interactable_object = obj;
+			min_distance = player_position.distance_to(obj.global_transform.origin);
+		elif object_priority == highest_priority:
+			## Si tiene la misma prioridad, se calcula la distancia mas corta
+			var distance = player_position.distance_to(obj.global_transform.origin);
+			if distance < min_distance:
+				tmp_interactable_object = obj;
+				min_distance = distance;
 	
-	closest_interactable_object = closest_object;
-	print("Closest object: ", closest_interactable_object);
+	current_interactable_object = tmp_interactable_object;
+	print("Current interactable object: ", current_interactable_object);

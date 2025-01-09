@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://co0jjvf851eqf"]
+
+[ext_resource type="PackedScene" uid="uid://dwsgrq1c03q5r" path="res://scenes/ingredient_boxes/ingredient_box.tscn" id="1_l0yln"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ls6ko"]
+
+[node name="MeatBox" instance=ExtResource("1_l0yln")]
+ingredient_type = "meat"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5"]
+mesh = SubResource("BoxMesh_ls6ko")
