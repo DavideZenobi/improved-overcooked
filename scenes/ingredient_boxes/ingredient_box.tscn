@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwsgrq1c03q5r"]
+[gd_scene load_steps=6 format=3 uid="uid://dwsgrq1c03q5r"]
 
 [ext_resource type="Script" path="res://scripts/ingredient_boxes/ingredient_box.gd" id="1_a6dce"]
 [ext_resource type="PackedScene" uid="uid://cfdtilqpqtvtb" path="res://scenes/components/supportable_object_holder/supportable_object_holder.tscn" id="1_sx5fk"]
-[ext_resource type="PackedScene" uid="uid://b3tud85g5dq7j" path="res://scenes/components/priority_interaction/priority_interaction.tscn" id="2_tlyp8"]
 [ext_resource type="PackedScene" uid="uid://ryihn33gffeu" path="res://scenes/components/highlight_interactable_object/highlight_interactable_object.tscn" id="3_h0oat"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ngt4j"]
@@ -23,8 +22,6 @@ shape = SubResource("BoxShape3D_ngt4j")
 shape = SubResource("BoxShape3D_vihnr")
 
 [node name="SupportableObjectHolder" parent="." instance=ExtResource("1_sx5fk")]
-
-[node name="PriorityInteraction" parent="." instance=ExtResource("2_tlyp8")]
 
 [node name="HighlightInteractableObject" parent="." instance=ExtResource("3_h0oat")]
 

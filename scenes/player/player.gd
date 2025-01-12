@@ -43,5 +43,10 @@ func handle_movement(direction: Vector3, delta: float):
 	move_and_slide()
 
 func handle_interaction():
-	
-	pass;
+	if current_carrying_object:
+		## Controla que tipo de objeto esta llevando.
+		## Seran acciones diferentes si lleva un plato, una sarten con ingredientes o un ingrediente.
+		pass;
+	else:
+		## Interactua con el objeto
+		pass;
