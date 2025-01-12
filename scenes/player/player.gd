@@ -3,32 +3,11 @@ extends CharacterBody3D
 @export var speed = 3
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var current_carrying_object: Node = null;
+
 func _process(delta):
 	if Input.is_action_just_pressed("take_or_drop"):
-		if $CarryingObject.current_carrying_object:
-			if $InteractableArea.current_interactable_object:
-				## Can try to support the object on the table/furniture/etc if its possible
-				handle_drop();
-			else:
-				## Nothing happens. Could try to drop the object on the floor in the future
-				pass;
-		else:
-			if $InteractableArea.current_interactable_object:
-				if (
-					$InteractableArea.current_interactable_object is IngredientBox or
-					$InteractableArea.current_interactable_object is Ingredient
-				):
-					print($InteractableArea.current_interactable_object is IngredientBox);
-					print($InteractableArea.current_interactable_object is Ingredient);
-					handle_take();
-				pass;
-			pass;
-		
-		if $InteractableArea.current_interactable_object:
-			var ingredient_type = $InteractableArea.current_interactable_object.get_ingredient_box_type()
-			var holding_point: Vector3 = $HoldingPoint.global_transform.origin
-			## SceneManager.spawn_ingredient(ingredient_type, holding_point)
-			SceneManagerV2.instantiate_scene(ingredient_type, holding_point, self)
+		handle_interaction();
 
 func _physics_process(delta):
 	var direction = Vector3(0, 0, 0)
@@ -63,11 +42,6 @@ func handle_movement(direction: Vector3, delta: float):
 	
 	move_and_slide()
 
-func handle_take():
+func handle_interaction():
 	
-	pass;
-
-func handle_drop():
-	## Primero se controla si tiene algun objeto apoyado ya que tiene prioridad.
-	## Segundo
 	pass;
