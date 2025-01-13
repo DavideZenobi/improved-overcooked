@@ -8,6 +8,8 @@ var current_carrying_object: Node = null;
 func _process(delta):
 	if Input.is_action_just_pressed("take_or_drop"):
 		handle_interaction();
+	if Input.is_action_just_pressed("action"):
+		pass;
 
 func _physics_process(delta):
 	var direction = Vector3(0, 0, 0)
@@ -48,5 +50,12 @@ func handle_interaction():
 		## Seran acciones diferentes si lleva un plato, una sarten con ingredientes o un ingrediente.
 		pass;
 	else:
+		## Si no hay objeto con el que interactuar, no sucede nada.
+		if not $InteractableArea.current_interactable_object:
+			return;
 		## Interactua con el objeto
-		pass;
+		if $InteractableArea.current_interactable_object is Ingredient:
+			pass;
+		elif $InteractableArea.current_interactable_object is IngredientBox:
+			pass;
+			
