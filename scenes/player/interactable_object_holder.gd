@@ -6,7 +6,7 @@ var current_interactable_object: Node = null
 
 func _interactable_object_on_area_entered(area: Area3D):
 	interactable_objects.append(area.get_parent());
-	##update_current_interactable_object();
+	## update_current_interactable_object();
 
 func _interactable_object_on_area_exited(area: Area3D):
 	if not interactable_objects.is_empty():

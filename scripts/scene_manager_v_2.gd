@@ -36,6 +36,7 @@ func reparent_scene(scene_to_reparent: Node, new_position: Vector3, new_parent: 
 	scene_to_reparent.global_transform.origin = new_position;
 	return scene_to_reparent;
 
-func delete_scene(scene: Node):
-	
+func delete_node(node: Node):
+	print("Eliminating ", node.name, " from parent ", node.get_parent());
+	node.queue_free();
 	return;

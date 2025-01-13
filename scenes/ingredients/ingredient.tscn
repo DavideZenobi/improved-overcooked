@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7os0mfbl50h3"]
+[gd_scene load_steps=2 format=3 uid="uid://dpb5o3b32t3mg"]
 
-[ext_resource type="PackedScene" uid="uid://b3tud85g5dq7j" path="res://scenes/components/priority_interaction/priority_interaction.tscn" id="1_4m03y"]
-[ext_resource type="Script" path="res://scripts/ingredient.gd" id="1_ht0er"]
+[ext_resource type="Script" path="res://scenes/ingredients/ingredient.gd" id="1_yboy3"]
 
-[node name="Ingredient" type="Node3D"]
-script = ExtResource("1_ht0er")
-
-[node name="PriorityInteraction" parent="." instance=ExtResource("1_4m03y")]
-priority = 2
+[node name="Ingredient" type="Node"]
+script = ExtResource("1_yboy3")

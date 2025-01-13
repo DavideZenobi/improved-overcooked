@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://g8fbemuly1uq"]
+[gd_scene load_steps=4 format=3 uid="uid://dkrmpaarns8w2"]
 
-[ext_resource type="PackedScene" uid="uid://b7os0mfbl50h3" path="res://scenes/ingredients/ingredient.tscn" id="1_vrwbl"]
-[ext_resource type="PackedScene" uid="uid://bk0d7x7uwtg15" path="res://assets/kenney_food-kit/Models/GLB format/fish.glb" id="2_ri6ig"]
+[ext_resource type="PackedScene" uid="uid://dpb5o3b32t3mg" path="res://scenes/ingredients/ingredient.tscn" id="1_m8kmu"]
+[ext_resource type="PackedScene" uid="uid://doaa2exv04qvs" path="res://assets/kenney_food-kit/Models/FBX format/fish.fbx" id="2_u6ovo"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rco8e"]
-size = Vector3(0.3, 0.2, 0.7)
+[sub_resource type="BoxShape3D" id="BoxShape3D_7igj4"]
+size = Vector3(0.3, 0.15, 0.6)
 
-[node name="Fish" instance=ExtResource("1_vrwbl")]
+[node name="Fish" instance=ExtResource("1_m8kmu")]
+cookable = true
 
-[node name="fish2" parent="." index="0" instance=ExtResource("2_ri6ig")]
+[node name="fish" parent="." index="0" instance=ExtResource("2_u6ovo")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Area3D" type="Area3D" parent="." index="2"]
+[node name="Area3D" type="Area3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121974, 0, 0)
-shape = SubResource("BoxShape3D_rco8e")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12642, 0.023833, 0)
+shape = SubResource("BoxShape3D_7igj4")
