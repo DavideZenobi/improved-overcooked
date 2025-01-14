@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4kx0i7ob1tjp"]
+
+[ext_resource type="Script" path="res://scenes/components/portable_object/portable_object.gd" id="1_61msb"]
+
+[node name="PortableObject" type="Node"]
+script = ExtResource("1_61msb")

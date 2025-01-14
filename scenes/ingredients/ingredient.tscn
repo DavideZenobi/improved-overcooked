@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpb5o3b32t3mg"]
+[gd_scene load_steps=3 format=3 uid="uid://dpb5o3b32t3mg"]
 
 [ext_resource type="Script" path="res://scenes/ingredients/ingredient.gd" id="1_yboy3"]
+[ext_resource type="PackedScene" uid="uid://d4kx0i7ob1tjp" path="res://scenes/components/portable_object/portable_object.tscn" id="2_jfmqf"]
 
 [node name="Ingredient" type="Node"]
 script = ExtResource("1_yboy3")
+
+[node name="PortableObject" parent="." instance=ExtResource("2_jfmqf")]

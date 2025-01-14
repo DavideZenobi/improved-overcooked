@@ -59,3 +59,9 @@ func handle_interaction():
 		elif $InteractableArea.current_interactable_object is IngredientBox:
 			pass;
 			
+
+func handle_drop():
+	pass;
+
+func handle_take():
+	pass;
