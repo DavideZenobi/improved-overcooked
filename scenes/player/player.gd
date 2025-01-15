@@ -7,7 +7,7 @@ var current_carrying_object: Node = null;
 
 func _process(delta):
 	if Input.is_action_just_pressed("take_or_drop"):
-		handle_interaction();
+		handle_take_or_drop();
 	if Input.is_action_just_pressed("action"):
 		pass;
 
@@ -44,21 +44,20 @@ func handle_movement(direction: Vector3, delta: float):
 	
 	move_and_slide()
 
-func handle_interaction():
-	if current_carrying_object:
-		## Controla que tipo de objeto esta llevando.
-		## Seran acciones diferentes si lleva un plato, una sarten con ingredientes o un ingrediente.
-		pass;
-	else:
+func handle_take_or_drop():
+	if not $InteractableArea.current_interactable_object:
 		## Si no hay objeto con el que interactuar, no sucede nada.
-		if not $InteractableArea.current_interactable_object:
-			return;
-		## Interactua con el objeto
-		if $InteractableArea.current_interactable_object is Ingredient:
-			pass;
-		elif $InteractableArea.current_interactable_object is IngredientBox:
-			pass;
-			
+		return;
+	
+	if current_carrying_object:
+		
+		pass;
+	## Más tarde habrá que gestionar casos como llevar un plato e interactuar
+	## con un ingrediente que si que se puede meter en el plato
+	## Ejemplo: elif plato, elif sarten, elif olla, etc.
+	else:
+		
+		pass;
 
 func handle_drop():
 	pass;
