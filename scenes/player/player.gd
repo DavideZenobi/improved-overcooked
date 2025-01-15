@@ -56,7 +56,8 @@ func handle_take_or_drop():
 	## con un ingrediente que si que se puede meter en el plato
 	## Ejemplo: elif plato, elif sarten, elif olla, etc.
 	else:
-		
+		if $InteractableArea.current_interactable_object is IngredientBox:
+			print("meri meri")
 		pass;
 
 func handle_drop():
