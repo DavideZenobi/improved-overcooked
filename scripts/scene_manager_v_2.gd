@@ -4,6 +4,8 @@ var current_level;
 
 var ingredient_scenes: Dictionary = {
 	"meat_raw": preload("res://scenes/ingredients/meat_raw.tscn"),
+	"egg_fried": preload("res://scenes/ingredients/egg_fried.tscn"),
+	"egg_raw": preload("res://scenes/ingredients/egg_raw.tscn"),
 	"fish": preload("res://scenes/ingredients/fish.tscn"),
 }
 

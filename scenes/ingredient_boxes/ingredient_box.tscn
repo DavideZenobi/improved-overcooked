@@ -15,5 +15,6 @@ script = ExtResource("1_a6dce")
 shape = SubResource("BoxShape3D_ngt4j")
 
 [node name="SupportableObjectHolder" parent="." instance=ExtResource("1_sx5fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.537888, 0)
 
 [node name="InteractableObject" parent="." instance=ExtResource("3_75xxt")]

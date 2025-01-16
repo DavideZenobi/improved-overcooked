@@ -45,6 +45,7 @@ func handle_movement(direction: Vector3, delta: float):
 	move_and_slide()
 
 func handle_take_or_drop():
+	$InteractableArea.update_current_interactable_object();
 	if not $InteractableArea.current_interactable_object:
 		## Si no hay objeto con el que interactuar, no sucede nada.
 		return;

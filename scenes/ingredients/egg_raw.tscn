@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://duj1icaejwij2"]
+
+[ext_resource type="PackedScene" uid="uid://cp82h68d1iw3n" path="res://assets/kenney_food-kit/Models/GLB format/egg.glb" id="1_g3hed"]
+
+[node name="EggRaw" type="Node"]
+
+[node name="egg2" parent="." instance=ExtResource("1_g3hed")]

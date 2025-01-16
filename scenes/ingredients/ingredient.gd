@@ -2,6 +2,7 @@ extends Node
 
 class_name Ingredient;
 
+@export var ingredient: String;
 @export var cuttable: bool;
 @export var cookable: bool;
 @export var cooking_time: int;

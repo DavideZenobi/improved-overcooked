@@ -7,5 +7,5 @@
 [node name="FishBox" instance=ExtResource("1_gx3jl")]
 ingredient = "fish"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3"]
 mesh = SubResource("BoxMesh_fnpmv")

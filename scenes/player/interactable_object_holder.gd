@@ -6,12 +6,12 @@ var current_interactable_object: Node = null
 
 func _interactable_object_on_area_entered(area: Area3D):
 	interactable_objects.append(area.get_parent());
-	## update_current_interactable_object();
+	update_current_interactable_object();
 
 func _interactable_object_on_area_exited(area: Area3D):
 	if not interactable_objects.is_empty():
 		interactable_objects.erase(area.get_parent());
-		## update_current_interactable_object();
+		update_current_interactable_object();
 
 func update_current_interactable_object():
 	## Si no hay objetos en la array, no hay objeto más cercano.
@@ -26,25 +26,14 @@ func update_current_interactable_object():
 		return;
 	
 	var player_position = get_parent().global_transform.origin;
-	var highest_priority = -1;
 	var min_distance = INF;
 	var tmp_interactable_object = null;
 	
 	for obj in interactable_objects:
-		var object_priority = obj.get_node("PriorityInteraction").get_priority();
-		print(object_priority);
-		
-		if object_priority > highest_priority:
-			## Si el objeto tiene mas prioridad, es seleccionado
-			highest_priority = object_priority;
+		var distance = player_position.distance_to(obj.global_transform.origin);
+		if distance < min_distance:
 			tmp_interactable_object = obj;
-			min_distance = player_position.distance_to(obj.global_transform.origin);
-		elif object_priority == highest_priority:
-			## Si tiene la misma prioridad, se calcula la distancia mas corta
-			var distance = player_position.distance_to(obj.global_transform.origin);
-			if distance < min_distance:
-				tmp_interactable_object = obj;
-				min_distance = distance;
+			min_distance = distance;
 	
 	current_interactable_object = tmp_interactable_object;
 	print("Current interactable object: ", current_interactable_object);

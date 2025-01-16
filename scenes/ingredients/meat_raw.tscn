@@ -7,6 +7,7 @@
 size = Vector3(0.5, 0.1, 0.6)
 
 [node name="MeatRaw" instance=ExtResource("1_h3sy6")]
+ingredient = "meat_raw"
 cookable = true
 
 [node name="meat-raw" parent="." index="0" instance=ExtResource("2_cemya")]

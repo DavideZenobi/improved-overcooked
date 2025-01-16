@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://scenes/components/supportable_object_holder/supportable_object_holder.gd" id="1_kjjub"]
 
-[node name="SupportableObjectHolder" type="Node"]
+[node name="SupportableObjectHolder" type="Node3D"]
 script = ExtResource("1_kjjub")
