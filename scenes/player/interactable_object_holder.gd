@@ -17,7 +17,6 @@ func update_current_interactable_object():
 	## Si no hay objetos en la array, no hay objeto más cercano.
 	if interactable_objects.is_empty():
 		current_interactable_object = null;
-		print("No interactable object near");
 		return;
 	
 	## Si solo hay un objeto, ese será el único con el que interactuar.

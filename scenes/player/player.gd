@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+var InteractionHelper = preload("res://scenes/player/interaction_helper.gd").new();
+
 @export var speed = 3
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -7,6 +9,7 @@ var current_carrying_object: Node = null;
 
 func _process(delta):
 	if Input.is_action_just_pressed("take_or_drop"):
+		InteractionHelper.handle_take($InteractableArea.current_interactable_object);
 		handle_take_or_drop();
 	if Input.is_action_just_pressed("action"):
 		pass;
