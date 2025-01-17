@@ -1,19 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://j4y4l5ptohle"]
+[gd_scene load_steps=2 format=3 uid="uid://capjksnmegnh6"]
 
-[ext_resource type="PackedScene" uid="uid://dpb5o3b32t3mg" path="res://scenes/ingredients/ingredient.tscn" id="1_h3sy6"]
-[ext_resource type="PackedScene" uid="uid://8rpf5n8yaccn" path="res://assets/kenney_food-kit/Models/FBX format/meat-raw.fbx" id="2_cemya"]
+[ext_resource type="PackedScene" uid="uid://cqyf1htivfq8o" path="res://assets/kenney_food-kit/Models/GLB format/meat-raw.glb" id="2_kftd1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7ysss"]
-size = Vector3(0.5, 0.1, 0.6)
+[node name="MeatRaw" type="Node3D"]
 
-[node name="MeatRaw" instance=ExtResource("1_h3sy6")]
-ingredient = "meat_raw"
-cookable = true
-
-[node name="meat-raw" parent="." index="0" instance=ExtResource("2_cemya")]
-
-[node name="Area3D" type="Area3D" parent="." index="1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0369543, 0)
-shape = SubResource("BoxShape3D_7ysss")
+[node name="meat-raw2" parent="." instance=ExtResource("2_kftd1")]

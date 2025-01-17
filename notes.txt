@@ -1,0 +1,10 @@
+- Godot de alguna forma recuerda el primer nombre cuando creas una escena a partir 
+de una escena padre. Ejemplo: Tengo una escena llamada Ingredient y solo tiene 
+un Node3D. Despues tengo varias escenas con nombres de ingredientes como fish,
+egg, meat_raw, etc. En el singleton SceneManager hago un preload de estas escenas
+porque es posible que tenga que instanciarlas. Cuando las instancio utilizo el nombre
+de las escenas. Si las escenas de ingredientes las hubiese creado con la opcion 
+de New Inherited Scene, de alguna forma Godot se habria guardado el nombre original 
+de la escena padre Ingredient, que se llama igual, Ingredient, y a pesar de que 
+haya cambiado el nombre de la escena y el nodo raiz, no la va a encontrar nunca.
+Solucion: He creado las escenas a mano, sin utilizar la opcion de herencia.

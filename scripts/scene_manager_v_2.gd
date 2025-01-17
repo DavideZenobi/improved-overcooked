@@ -28,9 +28,10 @@ func instantiate_scene(scene_name: String, position: Vector3, parent_node: Node 
 	## En este caso para llevar objetos, como los ingredientes
 	if parent_node != null:
 		parent_node.add_child(scene_instance);
-	
+
 	scene_instance.global_transform.origin = position;
 	
+	print("Ingredient ", scene_instance.name, " created!");
 	return scene_instance;
 func reparent_scene(scene_to_reparent: Node, new_position: Vector3, new_parent: Node = null) -> Node:
 	var old_parent = scene_to_reparent.get_parent();

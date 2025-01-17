@@ -8,6 +8,7 @@ func set_player(player_to_set: CharacterBody3D):
 func handle_interact(interactable_object: Node):
 	if player.current_carrying_object:
 		print("hey hey");
+		handle_drop();
 		pass;
 	else:
 		if interactable_object:
