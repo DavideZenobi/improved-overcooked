@@ -2,6 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bk0d7x7uwtg15" path="res://assets/kenney_food-kit/Models/GLB format/fish.glb" id="1_gk4at"]
 
-[node name="Fish" type="Node"]
+[node name="Fish" type="Node3D"]
 
 [node name="fish2" parent="." instance=ExtResource("1_gk4at")]

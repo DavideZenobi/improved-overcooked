@@ -14,7 +14,7 @@ func load_scene(scene_name: String):
 	
 	return;
 
-func instantiate_scene(scene_name: String, position: Vector3, parent_node: Node = null) -> void:
+func instantiate_scene(scene_name: String, position: Vector3, parent_node: Node = null) -> Node:
 	
 	if not ingredient_scenes.has(scene_name):
 		print("Error: No scene found for ingredient type: ", scene_name);
@@ -30,7 +30,8 @@ func instantiate_scene(scene_name: String, position: Vector3, parent_node: Node 
 		parent_node.add_child(scene_instance);
 	
 	scene_instance.global_transform.origin = position;
-
+	
+	return scene_instance;
 func reparent_scene(scene_to_reparent: Node, new_position: Vector3, new_parent: Node = null) -> Node:
 	var old_parent = scene_to_reparent.get_parent();
 	old_parent.remove_child(scene_to_reparent);

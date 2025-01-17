@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/ingredients/ingredient.gd" id="1_rfjvi"]
 [ext_resource type="PackedScene" uid="uid://bunegag83yypg" path="res://assets/kenney_food-kit/Models/GLB format/egg-cooked.glb" id="2_b0peu"]
 
-[node name="EggFried" type="Node"]
+[node name="EggFried" type="Node3D"]
 script = ExtResource("1_rfjvi")
 
 [node name="egg-cooked2" parent="." instance=ExtResource("2_b0peu")]
