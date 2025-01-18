@@ -15,9 +15,6 @@ func support(supportable_object: Node):
 		return;
 	
 	current_supportable_object = supportable_object;
-	return;
 
 func unsupport():
-	
 	current_supportable_object = null;
-	return;

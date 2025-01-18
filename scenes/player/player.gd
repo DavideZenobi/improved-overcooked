@@ -12,7 +12,8 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("take_or_drop"):
-		InteractionHelper.handle_interact($InteractableArea.current_interactable_object);
+		if $InteractableArea.current_interactable_object:
+			InteractionHelper.handle_interact($InteractableArea.current_interactable_object);
 	if Input.is_action_just_pressed("action"):
 		pass;
 

@@ -7,15 +7,21 @@ func set_player(player_to_set: CharacterBody3D):
 
 func handle_interact(interactable_object: Node):
 	if player.current_carrying_object:
-		print("hey hey");
-		handle_drop();
-		pass;
+		handle_drop(interactable_object);
 	else:
-		if interactable_object:
-			handle_take(interactable_object);
-func handle_drop():
+		handle_take(interactable_object);
+
+func handle_drop(interactable_object: Node):
+	if not interactable_object.has_node("SupportableObjectHolder"): return;
 	
-	pass;
+	var soh = interactable_object.get_node("SupportableObjectHolder");
+	
+	if soh.current_supportable_object:
+		print("There's already an object. Can't drop");
+		return;
+	SceneManagerV2.reparent_scene(player.current_carrying_object, soh.global_transform.origin, interactable_object);
+	soh.support(player.current_carrying_object);
+	player.current_carrying_object = null;
 
 func handle_take(interactable_object: Node):
 	## El unico caso en el que pueda servir coger algo y que no este en ninguna caja
