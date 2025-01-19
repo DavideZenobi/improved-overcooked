@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://1c7ggs2uak4s"]
+[gd_scene load_steps=6 format=3 uid="uid://1c7ggs2uak4s"]
 
 [ext_resource type="PackedScene" uid="uid://co0jjvf851eqf" path="res://scenes/ingredient_boxes/meat_box.tscn" id="1_mbh72"]
 [ext_resource type="PackedScene" uid="uid://dvumvdp0257ii" path="res://scenes/ingredient_boxes/fish_box.tscn" id="2_7iptg"]
+[ext_resource type="PackedScene" uid="uid://d0q8rnwwyrhe5" path="res://scenes/kitchenware/cooking_box.tscn" id="3_2uw12"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88i7j"]
 size = Vector3(10, 1, 10)
@@ -27,3 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17129, 1.15203, -3.27762)
 
 [node name="FishBox2" parent="." instance=ExtResource("2_7iptg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09431, 1.06796, -3.08539)
+
+[node name="CookingBox" parent="." instance=ExtResource("3_2uw12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775154, 0.980232, -3.14411)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

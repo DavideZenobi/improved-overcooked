@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0q8rnwwyrhe5"]
+
+[ext_resource type="PackedScene" uid="uid://cfdtilqpqtvtb" path="res://scenes/components/supportable_object_holder/supportable_object_holder.tscn" id="1_ml6ol"]
+[ext_resource type="PackedScene" uid="uid://crujvoaabwbn0" path="res://scenes/kitchenware/pan.tscn" id="2_3ulq8"]
+[ext_resource type="PackedScene" uid="uid://dxwn6afcwhch2" path="res://scenes/components/interactable_object/interactable_object.tscn" id="3_qnbog"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnhlx"]
+albedo_color = Color(1, 0.392157, 0.345098, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6ttvo"]
+material = SubResource("StandardMaterial3D_wnhlx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q3ht3"]
+
+[node name="CookingBox" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_6ttvo")
+
+[node name="SupportableObjectHolder" parent="." node_paths=PackedStringArray("current_supportable_object") instance=ExtResource("1_ml6ol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506764, 0)
+current_supportable_object = NodePath("../Pan")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_q3ht3")
+
+[node name="InteractableObject" parent="." instance=ExtResource("3_qnbog")]
+
+[node name="Pan" parent="." instance=ExtResource("2_3ulq8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.506764, 0)

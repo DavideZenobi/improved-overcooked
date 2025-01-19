@@ -7,7 +7,7 @@ extends Node
 ## tenga un nodo referencia donde se va a apoyar el objeto.
 ## IMPORTANTE
 
-var current_supportable_object: Node = null;
+@export var current_supportable_object: Node = null;
 
 func support(supportable_object: Node):
 	if current_supportable_object:

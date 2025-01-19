@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7f3dnqkpp5n3"]
 
-[ext_resource type="Script" path="res://scenes/kitchenware/kitchenware.gd" id="1_ax43a"]
+[ext_resource type="PackedScene" uid="uid://d21b1xeitt3yu" path="res://assets/kenney_food-kit/Models/GLB format/pot.glb" id="1_ohryo"]
 
 [node name="Pot" type="Node3D"]
-script = ExtResource("1_ax43a")
+
+[node name="pot2" parent="." instance=ExtResource("1_ohryo")]
