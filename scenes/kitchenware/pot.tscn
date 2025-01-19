@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7f3dnqkpp5n3"]
+
+[ext_resource type="Script" path="res://scenes/kitchenware/kitchenware.gd" id="1_ax43a"]
+
+[node name="Pot" type="Node3D"]
+script = ExtResource("1_ax43a")
